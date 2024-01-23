@@ -5,9 +5,9 @@ const delateContact = async (req, res, next) => {
   const contact = await removeContact(contactId);
 
   if (contact) {
-    res.json({ status: 200, message: "contact deleted" });
+    return res.json({ status: 200, message: "contact deleted" });
   } else {
-    res.json({ status: 404, message: "Not found" });
+    return res.json({ status: 404, message: "Not found" });
   }
 };
 export { delateContact };
