@@ -8,4 +8,9 @@ const schema = Joi.object({
     .optional(),
 });
 
-export { schema };
+const shcemaUsers = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().min(8).required(),
+});
+
+export { schema, shcemaUsers };

@@ -1,7 +1,8 @@
-import path from "path";
 import { Contact } from "./Contact.js";
 
-const contactPath = path.resolve("./models/contacts.json");
+// zapisywanie do pliku
+// import path from "path";
+// const contactPath = path.resolve("./models/contacts.json");
 
 const listContacts = async () => {
   try {
