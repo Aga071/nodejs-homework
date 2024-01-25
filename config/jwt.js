@@ -1,6 +1,7 @@
 import passport from "passport";
 import { ExtractJwt, Strategy as JWTStrategy } from "passport-jwt";
 import User from "../models/User.js";
+import "dotenv/config";
 
 export default function setJWTStrategy() {
   const secret = process.env.SECRET;

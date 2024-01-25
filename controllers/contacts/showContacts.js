@@ -5,7 +5,7 @@ const getContact = async (req, res, next) => {
   if (contact) {
    return res.json({ status: 200, data: contact });
   } else {
-   return res.json({ status: 404, message: "Not found" });
+   return res.status(404).json({ status: 404, message: "Not found" });
   }
 };
 export { getContact };

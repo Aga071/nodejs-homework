@@ -7,9 +7,11 @@ const patchContact = async (req, res) => {
     const body = { favorite };
     if (body) {
       const renameContact = await updateStatusContact(contactId, body);
-      return res.json({ status: 200, message: renameContact });
+      return res.status(200).json({ status: 200, message: renameContact });
     } else {
-      return res.json({ status: 400, message: "missing field favorite" });
+      return res
+        .status(400)
+        .json({ status: 400, message: "missing field favorite" });
     }
   } catch (err) {}
 };
