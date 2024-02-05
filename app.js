@@ -1,6 +1,7 @@
 import express from "express";
 import logger from "morgan";
 import cors from "cors";
+import path from "path";
 
 import { router as contactsRouter } from "./routes/api/contacts.js";
 import { router as usersRouter } from "./routes/api/users.js";
@@ -17,6 +18,9 @@ const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
+
+
+app.use(express.static(path.resolve(process.cwd(), "./public")));
 
 setJWTStrategy();
 

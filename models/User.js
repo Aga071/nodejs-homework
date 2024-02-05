@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import bCrypt from "bcrypt";
 
-
 const userSchema = new mongoose.Schema({
   password: {
     type: String,
@@ -25,6 +24,7 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
   },
+  avatarURL: String,
 });
 // register
 userSchema.methods.setPassword = async function (password) {
