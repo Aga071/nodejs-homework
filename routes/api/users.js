@@ -9,6 +9,8 @@ import { logoutUsers } from "../../controllers/users/logoutUsers.js";
 import { currentUsers } from "../../controllers/users/currentUsers.js";
 import { updateAvatar } from "../../controllers/users/apdateAvatar.js";
 import { uploadMiddleware } from "./middlewares/upload.js";
+import { verificationUser } from "../../controllers/users/verificationUsers.js";
+import { reVerificationUser } from "../../controllers/users/reVerificationUsers.js";
 
 const router = express.Router();
 
@@ -26,4 +28,9 @@ router.patch(
   uploadMiddleware.single("picture"),
   updateAvatar
 );
+
+router.get("/verify/:verificationToken", verificationUser);
+
+router.post("/verify", reVerificationUser);
+
 export { router };
